@@ -38,6 +38,7 @@ The event is something that can happen to the HTML element.
 It is a method that monitors the activity and looks for the event that matches the specified description.
 
 4. Why would we convert a NodeList into an Array?
+So it can observe all the built-in functionality of the Array.
 
 5. What is a component?
 
