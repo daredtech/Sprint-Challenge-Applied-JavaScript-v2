@@ -27,7 +27,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 //if successful
 .then(data => {console.log(data.data)})
 
-function createCard(){
+function createCard(authorName, authorPhoto,headline){
     //define the elements
     const card = document.createElement('div');
     const cardHeadline = document.createElement('div');
@@ -51,6 +51,11 @@ function createCard(){
    cardImgContainer.classList.add('img-container');
    cardImg.classList.add('img');
    cardBy.classList.add('span');
+
+    //setup the content
+    cardAuthor.textContent = authorName;
+    cardImg.src = authorPhoto;
+    cardHeadline.textContent = headline;
 
 
 
