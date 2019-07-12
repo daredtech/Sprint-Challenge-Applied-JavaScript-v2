@@ -44,7 +44,14 @@ function createCard(){
     cardImgContainer.appendChild(cardImg);
     cardAuthor.appendChild(cardBy);
  
- 
+   //setup the styling
+   card.classList.add('card');
+   cardHeadline.classList.add('headline');
+   cardAuthor.classList.add('author');
+   cardImgContainer.classList.add('img-container');
+   cardImg.classList.add('img');
+   cardBy.classList.add('span');
+
 
 
     
