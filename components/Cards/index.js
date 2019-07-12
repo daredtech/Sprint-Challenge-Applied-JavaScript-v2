@@ -20,14 +20,19 @@
 
 const cards = document.querySelector('.cards-container');
 
+// createCard('TEST NAME', 'TEST AUTHOR', '');
+
 //to request information from the server
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 //if not successful
 .catch(error => {console.log('Unable to return complete GET request')})
 //if successful
-.then(data => {console.log(data.data)})
+.then(data => {console.log(data.data.articles);
+    let cardCollection = data.data.articles; 
+    cardCollection.forEach(element => {element.forEach(item => {createCard(item.authorName, item.headline, item.authorPhoto)})})
+})
 
-function createCard(authorName, authorPhoto,headline){
+function createCard(authorName, headline,authorPhoto){
     //define the elements
     const card = document.createElement('div');
     const cardHeadline = document.createElement('div');
@@ -54,8 +59,9 @@ function createCard(authorName, authorPhoto,headline){
 
     //setup the content
     cardAuthor.textContent = authorName;
-    cardImg.src = authorPhoto;
     cardHeadline.textContent = headline;
+    // cardImg.src = authorPhoto;
+    
 
 
 
