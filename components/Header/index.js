@@ -23,6 +23,13 @@ function Header() {
     header.appendChild(headerDate);
     header.appendChild(headerTitle);
     header.appendChild(headerTemp);
+
+    //setup the styling
+    header.classList.add('header');
+    headerDate.classList.add('date');
+    headerTitle.classList.add('h1');
+    headerTemp.classList.add('temp');
+
     
 
 
