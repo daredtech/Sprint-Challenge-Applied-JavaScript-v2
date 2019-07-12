@@ -21,6 +21,7 @@
 const cards = document.querySelector('.cards-container');
 
 
+
 //to request information from the server
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 //if not successful
@@ -29,12 +30,12 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(data => {console.log(data.data.articles);
     let cardCollection = data.data.articles; 
     //go throught each key, get its values and create the cards
-    Object.keys(cardCollection).forEach(function(key){cardCollection[key].forEach(item => {createCard(item.authorName, item.headline, item.authorPhoto)});});
+    Object.keys(cardCollection).forEach(function(key){cardCollection[key].forEach(item => {createCard(key, item.authorName, item.headline, item.authorPhoto)});});
 })
 
 
 
-function createCard(authorName, headline,authorPhoto){
+function createCard(key, authorName, headline,authorPhoto){
     //define the elements
     const card = document.createElement('div');
     const cardHeadline = document.createElement('div');
@@ -63,6 +64,8 @@ function createCard(authorName, headline,authorPhoto){
     cardBy.textContent = authorName;
     cardHeadline.textContent = headline;
     cardImg.src = authorPhoto;
+    card.setAttribute('data-topic', key);
+
     
 
 

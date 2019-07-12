@@ -28,5 +28,20 @@ function createTabs(topicText){
     tab.classList.add('tab');
     //setup the content
     tab.textContent = topicText;
+
+    tab.addEventListener('click', event => {
+        let allTabs = Array.from(document.querySelectorAll('.tab'));
+        let allCards = Array.from(document.querySelectorAll('.card'));
+        console.log('TAB INNER HTML: ' + tab.innerHTML);
+        allCards.forEach(elem => {
+                    if(elem.getAttribute('data-topic')!==tab.innerHTML){elem.style.display='none';}
+                    else{elem.style.display='flex';}
+                })
+            }
+    );
+
+
+ 
+
     return tab;
 }
