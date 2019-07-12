@@ -32,6 +32,7 @@ Edit this document to include your answers after each question. Make sure to lea
 The Document Object Model is the interface to dynamically represent and change the page's content. 
 
 2. What is an event?
+The event is something that can happen to the HTML element. 
 
 3. What is an event listener?
 
