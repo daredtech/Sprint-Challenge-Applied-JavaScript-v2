@@ -29,8 +29,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 //if successful
 .then(data => {console.log(data.data.articles);
     let cardCollection = data.data.articles; 
-    cardCollection.forEach(element => {element.forEach(item => {createCard(item.authorName, item.headline, item.authorPhoto)})})
+    //go throught each key, get its values and create the cards
+    Object.keys(cardCollection).forEach(function(key){cardCollection[key].forEach(item => {createCard(item.authorName, item.headline, item.authorPhoto)});});
 })
+
+
 
 function createCard(authorName, headline,authorPhoto){
     //define the elements
