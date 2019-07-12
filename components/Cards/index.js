@@ -28,16 +28,25 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(data => {console.log(data.data)})
 
 function createCard(){
-    //define the element
+    //define the elements
     const card = document.createElement('div');
     const cardHeadline = document.createElement('div');
     const cardAuthor = document.createElement('div');
     const cardImgContainer = document.createElement('div');
     const cardImg = document.createElement('img');
     const cardBy = document.createElement('span');
+
+    //setup the structure
+    cards.appendChild(card);
+    card.appendChild(cardHeadline);
+    card.appendChild(cardAuthor);
+    cardAuthor.appendChild(cardImgContainer);
+    cardImgContainer.appendChild(cardImg);
+    cardAuthor.appendChild(cardBy);
+ 
  
 
-    
+
     
     return card;
 }
