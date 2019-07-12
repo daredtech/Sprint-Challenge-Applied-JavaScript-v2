@@ -26,3 +26,18 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .catch(error => {console.log('Unable to return complete GET request')})
 //if successful
 .then(data => {console.log(data.data)})
+
+function createCard(){
+    //define the element
+    const card = document.createElement('div');
+    const cardHeadline = document.createElement('div');
+    const cardAuthor = document.createElement('div');
+    const cardImgContainer = document.createElement('div');
+    const cardImg = document.createElement('img');
+    const cardBy = document.createElement('span');
+ 
+
+    
+    
+    return card;
+}
