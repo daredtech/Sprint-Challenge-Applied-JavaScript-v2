@@ -15,11 +15,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 //if not successful
 .catch(error => {console.log('Unable to return complete GET request')})
 //if successful
-.then(data => {console.log(data.data); let topicCollection = data.data.topics; console.log("MY TOPIC COLLECTION IS: " + topicCollection);
-topicCollection.forEach(element => {createTabs(element)}); })
-// .then(data => {console.log(data.data); console.log("MY FIRST ELEMENT OF THE ARRAY :" + data.data.topics[0]); })
-
-
+.then(data => {console.log(data.data); 
+    let topicCollection = data.data.topics; 
+    topicCollection.forEach(element => {createTabs(element)}); })
 
 function createTabs(topicText){
     //define the element
