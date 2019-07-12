@@ -35,6 +35,7 @@ The Document Object Model is the interface to dynamically represent and change t
 The event is something that can happen to the HTML element. 
 
 3. What is an event listener?
+It is a method that monitors the activity and looks for the event that matches the specified description.
 
 4. Why would we convert a NodeList into an Array?
 
