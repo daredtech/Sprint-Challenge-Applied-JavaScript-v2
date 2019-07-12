@@ -20,7 +20,6 @@
 
 const cards = document.querySelector('.cards-container');
 
-// createCard('TEST NAME', 'TEST AUTHOR', '');
 
 //to request information from the server
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
@@ -61,9 +60,9 @@ function createCard(authorName, headline,authorPhoto){
    cardBy.classList.add('span');
 
     //setup the content
-    cardAuthor.textContent = authorName;
+    cardBy.textContent = authorName;
     cardHeadline.textContent = headline;
-    // cardImg.src = authorPhoto;
+    cardImg.src = authorPhoto;
     
 
 
