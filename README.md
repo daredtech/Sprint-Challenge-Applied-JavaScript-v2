@@ -41,6 +41,7 @@ It is a method that monitors the activity and looks for the event that matches t
 So it can observe all the built-in functionality of the Array.
 
 5. What is a component?
+It is a reusable piece of code that can utilize HTML, CSS, and Javascript.
 
 ### Git Set up
 
