@@ -7,3 +7,41 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const topics = document.querySelector('.topics');
+
+//to request information from the server
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+//if not successful
+.catch(error => {console.log('Unable to return complete GET request')})
+//if successful
+.then(data => {console.log(data.data); 
+    let topicCollection = data.data.topics; 
+    topicCollection.forEach(element => {createTabs(element)}); })
+
+function createTabs(topicText){
+    //define the element
+    const tab = document.createElement('div');
+    //setup the structure
+    topics.appendChild(tab);
+    //setup the styling
+    tab.classList.add('tab');
+    //setup the content
+    tab.textContent = topicText;
+
+    tab.addEventListener('click', event => {
+        let allTabs = Array.from(document.querySelectorAll('.tab'));
+        let allCards = Array.from(document.querySelectorAll('.card'));
+        console.log('TAB INNER HTML: ' + tab.innerHTML);
+        allCards.forEach(elem => {
+                    if(elem.getAttribute('data-topic')!==tab.innerHTML){elem.style.display='none';}
+                    else{elem.style.display='flex';}
+                })
+            }
+    );
+
+
+ 
+
+    return tab;
+}
